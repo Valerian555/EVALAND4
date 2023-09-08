@@ -61,6 +61,15 @@ class AddFragment : Fragment() {
         return binding.root
     }
 
+    //change text of the type button
+    private fun changeButtonText() {
+        if (selectedType == null) {
+            binding.expenseTypeInput.text = "Choose Type"
+        } else {
+            binding.expenseTypeInput.text = selectedType!!.name
+        }
+    }
+
     private fun addItem() {
         val expenseName = binding.expenseNameInput.text.toString()
         val expenseValue = binding.expenseAmountInput.text.toString().toFloat()
@@ -83,6 +92,7 @@ class AddFragment : Fragment() {
         builder.setTitle("Choose a type")
             .setItems(array) { dialog, which ->
                     selectedType = expensesType[which]
+                changeButtonText()
                 }
         builder.create().show()
     }
