@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.addExpense.AddFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/add_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/add_menu"/>
+
+    <TextView
+        android:id="@+id/name_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name_title"
+        app:layout_constraintTop_toBottomOf="@id/add_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/expense_name_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/name_title"
+        android:layout_marginHorizontal="20dp"
+        android:inputType="text"/>
+
+    <TextView
+        android:id="@+id/amount_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/amount_title"
+        app:layout_constraintTop_toBottomOf="@id/expense_name_input"
+        app:layout_constraintStart_toStartOf="@id/expense_name_input"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/expense_amount_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/amount_title"
+        android:layout_marginHorizontal="20dp"
+        android:inputType="numberDecimal"/>
+
+    <TextView
+        android:id="@+id/date_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date_title"
+        app:layout_constraintTop_toBottomOf="@id/expense_amount_input"
+        app:layout_constraintStart_toStartOf="@id/expense_amount_input"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/expense_date_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/date_title"
+        android:layout_marginHorizontal="20dp"/>
+
+    <TextView
+        android:id="@+id/type_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/type_title"
+        app:layout_constraintTop_toBottomOf="@id/expense_date_input"
+        app:layout_constraintStart_toStartOf="@id/expense_date_input"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/expense_type_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/type_title"
+        app:layout_constraintStart_toStartOf="@id/type_title"
+        android:text="Choose type"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
