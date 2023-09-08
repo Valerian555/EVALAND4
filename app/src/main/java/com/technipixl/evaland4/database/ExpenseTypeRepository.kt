@@ -64,7 +64,5 @@ class ExpenseTypeRepository {
                 expenseTypeDatabase!!.expenseDao().insert(expense)
             }
         }
-
-
     }
 }

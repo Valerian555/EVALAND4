@@ -23,4 +23,16 @@
         app:layout_constraintTop_toBottomOf="@id/list_toolbar"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
+    <TextView
+        android:id="@+id/empty_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="La liste est vide"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_toolbar"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

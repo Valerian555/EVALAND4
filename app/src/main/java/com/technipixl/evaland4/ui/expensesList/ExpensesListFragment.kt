@@ -40,8 +40,16 @@ class ExpensesListFragment : Fragment() {
             }
         }
 
+        //texte si la liste est vide
+        if (expensesList.isNullOrEmpty()) {
+            binding.emptyList.visibility = View.VISIBLE
+        } else {
+            binding.emptyList.visibility = View.INVISIBLE
+        }
+
         ExpenseTypeRepository.getAllExpenseType(requireContext())
 
+        //injecter les données de la db dans la liste
         loadExpensesFromDatabase()
 
         setupRecyclerView()
@@ -64,8 +72,10 @@ class ExpensesListFragment : Fragment() {
     private fun loadExpensesFromDatabase() {
         CoroutineScope(IO).launch {
             ExpenseTypeRepository.getAllExpense(requireContext()).collect {
+                //effacer le contenu de la liste afin d'éviter les doublons
                 expensesList.clear()
 
+                //ajouter le contenu de la table dépense dans la liste
                 expensesList.addAll(it)
             }
         }
